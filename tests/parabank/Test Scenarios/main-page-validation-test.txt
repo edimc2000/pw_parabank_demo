@@ -1,0 +1,16 @@
+[TC001] Main page snapshot after logging in 
+
+1. Login with a valid account 
+2. Validate the left menu. It should contain the following text and properties 
+ a. Text - Welcome {account firstname and lastname}
+ b. Text - Heading - Account Services
+ c. Text - Open New Account and Link - href="openaccount.htm"
+ d. Text - Accounts Overview and Link - href="overview.htm"
+ e. Text - Transfer Funds and Link href="transfer.htm"
+ f. Text - Bill Pay and Link - href="billpay.htm"
+ g. Text - Find Transactions and Link -href="findtrans.htm"
+ h. Text - Update Contact Info and Link - href="updateprofile.htm"
+ i. Text - Request Loan and Link - href="requestloan.htm"
+ j. Text - Log Out and Link - href="logout.htm"
+
+3. take a screen shot and compare to the previous test run. Note: You can update this screen shot if needed. If this is the first time, capture the full page and treat as golden reference

@@ -62,6 +62,4 @@ const test = base.extend<FixtureForPages>({
 
 })
 
-
-
-export { test, expect, data, dataObj }
+export { test, expect, data, dataObj, fs, path }
