@@ -1,0 +1,33 @@
+import { expect, data, test, dataObj, path } from '../fixtures/pages.fixture'
+
+test.describe('Unisys', async () => {
+
+    test.use({
+        storageState: './tests/auth/uni.json'
+    })
+
+    test('[TC001x] Unisys login ', async ({ loginPage }, testInfo) => {
+        await loginPage.page.goto('https://unisysmtfs.service-now.com/')
+        await loginPage.page.waitForTimeout(20000)
+        await loginPage.page.context().storageState({ path: './tests/auth/uni.json' });
+    })
+
+    test('[TC001x] Unisc check table', async ({ page }, testInfo) => {
+
+        await page.goto('https://unisysmtfs.service-now.com/now/nav/ui/classic/params/target/wm_task_list.do%3Fsysparm_query%3Dassigned_to%253D917b9be187024d50a1f4a60d3fbb358e%255Estate%253D16%255EORstate%253D17%255EORstate%253D20%255EORstate%253D21%255EORstate%253D18%255EORstate%253D10%26sysparm_first_row%3D1%26sysparm_view%3D')
+        expect(page.locator('#header-logo-image')).toBeVisible()
+        let tableHeader = page.frameLocator('iframe').locator('th')
+        let tableContent = page.frameLocator('iframe').locator('tr')
+
+        console.log(await tableHeader.nth(3).innerText())
+        console.log(await tableHeader.count())
+        console.log(await tableContent.nth(0).innerText())
+        console.log(await tableContent.count())
+
+        // await page.waitForTimeout(10000)
+
+
+
+    })
+
+})

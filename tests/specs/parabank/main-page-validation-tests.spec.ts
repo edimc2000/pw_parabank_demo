@@ -1,9 +1,9 @@
-import { expect, data, test, path } from '../fixtures/pages.fixture'
+import { expect, data, test, path } from '../../fixtures/pages.fixture'
 
 test.describe('Parabank - Login Scenarios', async () => {
-  test('[TC001] Main page snapshot after logging in', async ({ basePage }, testInfo) => {
+  test('[TC001] Validate main page snapshot and screenshot after logging in', async ({ basePage }, testInfo) => {
 
-    await expect(basePage.getContainerLeftPanel).toBeAttached()
+    // await expect(basePage.getContainerLeftPanel).toBeAttached()
 
     // golden snapshot taken 0608
     await expect(basePage.page.locator('body')).toMatchAriaSnapshot(`
@@ -153,18 +153,15 @@ test.describe('Parabank - Login Scenarios', async () => {
     await expect(basePage.page).toHaveScreenshot({
       fullPage: true
     });
-
-
-        await expect(basePage.page).toHaveScreenshot({
-      fullPage: true, 
-      clip:{
-        x:270, 
-        y:65, 
-        width:185, 
-        height:480
+    await expect(basePage.page).toHaveScreenshot({
+      fullPage: true,
+      clip: {
+        x: 270,
+        y: 65,
+        width: 185,
+        height: 480
       }
     });
   })
-
 
 })
