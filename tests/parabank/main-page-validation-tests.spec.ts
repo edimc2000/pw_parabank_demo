@@ -4,9 +4,6 @@ test.describe('Parabank - Login Scenarios', async () => {
   test('[TC001] Main page snapshot after logging in', async ({ basePage }, testInfo) => {
 
     await expect(basePage.getContainerLeftPanel).toBeAttached()
-    let urlx = basePage.page.url()
-
-    console.log(urlx)
 
     // golden snapshot taken 0608
     await expect(basePage.page.locator('body')).toMatchAriaSnapshot(`
