@@ -1,16 +1,64 @@
-[TC001] Main page snapshot after logging in 
+App: 'https://parabank.parasoft.com/parabank/'
 
-1. Login with a valid account 
-2. Validate the left menu. It should contain the following text and properties 
- a. Text - Welcome {account firstname and lastname}
- b. Text - Heading - Account Services
- c. Text - Open New Account and Link - href="openaccount.htm"
- d. Text - Accounts Overview and Link - href="overview.htm"
- e. Text - Transfer Funds and Link href="transfer.htm"
- f. Text - Bill Pay and Link - href="billpay.htm"
- g. Text - Find Transactions and Link -href="findtrans.htm"
- h. Text - Update Contact Info and Link - href="updateprofile.htm"
- i. Text - Request Loan and Link - href="requestloan.htm"
- j. Text - Log Out and Link - href="logout.htm"
+[TC01] Main page snapshot after logging in at lease for the following which are part of the left panel
+    1. Login with a valid account 
+    2. Validate the left menu. It should contain the following text and properties 
+     a. Text - Welcome {account firstname and lastname}
+     b. Text - Heading - Account Services
+     c. Text - Open New Account and Link - href="openaccount.htm"
+     d. Text - Accounts Overview and Link - href="overview.htm"
+     e. Text - Transfer Funds and Link href="transfer.htm"
+     f. Text - Bill Pay and Link - href="billpay.htm"
+     g. Text - Find Transactions and Link -href="findtrans.htm"
+     h. Text - Update Contact Info and Link - href="updateprofile.htm"
+     i. Text - Request Loan and Link - href="requestloan.htm"
+     j. Text - Log Out and Link - href="logout.htm"
 
-3. take a screen shot and compare to the previous test run. Note: You can update this screen shot if needed. If this is the first time, capture the full page and treat as golden reference
+    3. take a screen shot and compare to the previous test run. Note: You can update this screen shot if needed. 
+    If this is the first time, capture the full page and treat as golden reference
+
+[TC02] Validate Open New Account page content 
+    1. Login with a valid account 
+    2. Click on "Open New Account" under "Account Services" 
+    3. Validate the heading to have text "Open New Account" 
+    4. Validate that there are 2 drop down boxes, are enabled and clickable
+     a. Account type default should be "CHECKING", it should have 2 options, "CHECKING" and "SAVINGS"
+     b. Second dropdow should contain the account number (default), record the account number 
+    5. Verify the "OPEN NEW ACCOUNT" button is visible, enabled, and clickable 
+
+[TC03] Validate Accounts Overview page content 
+    1. Login with a valid account 
+    2. Click on "Accounts Overview" under "Account Services" 
+    3. Validate the heading to have text "Accounts Overview" 
+    4. Validate the table header - default content 
+
+[TC04] Validate Transfer Funds page content 
+    1. Login with a valid account 
+    2. Click on "Transfer Funds" under "Account Services" 
+    3. Validate the heading to have text "Transfer Funds" 
+    4. Validate the default content of the page 
+
+
+[TC05] Validate Bill Pay page content 
+    1. Login with a valid account 
+    2. Click on "Bill Pay" under "Account Services" 
+    3. Validate the heading to have text "Bill Pay" 
+    4. Validate the default content of the page 
+
+[TC06] Validate Find Transactions page content 
+    1. Login with a valid account 
+    2. Click on "Find Transactions" under "Account Services" 
+    3. Validate the heading to have text "Find Transactions" 
+    4. Validate the default content of the page 
+
+[TC07] Validate Update Contact Info page content 
+    1. Login with a valid account 
+    2. Click on "Update Contact Info" under "Account Services" 
+    3. Validate the heading to have text "Update Contact Info" 
+    4. Validate the default content of the page 
+
+[TC08] Validate Request Loan page content 
+    1. Login with a valid account 
+    2. Click on "Request Loan" under "Account Services" 
+    3. Validate the heading to have text "Request Loan" 
+    4. Validate the default content of the page 

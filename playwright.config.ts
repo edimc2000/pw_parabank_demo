@@ -50,7 +50,7 @@ export default defineConfig({
       testDir: './tests/specs/parabank-signin',
       use: { 
         ...devices['Desktop Chrome'], 
-        //  storageState: './tests/auth/parabank.json'
+          storageState: './tests/auth/parabank.json'
         
        },
       

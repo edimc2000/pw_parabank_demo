@@ -1,14 +1,15 @@
 import { expect, data, test } from '../../fixtures/pages.fixture'
 
 test.describe('Parabank - Login Scenarios @smoke', async () => {
-    test('[TC] Login with valid credentials and setupo account if needed', async ({ loginPage, dataObj, registerPage }) => {
-    
+    test('[TC] Login with valid credentials and setup account if needed', async ({ loginPage, dataObj, registerPage }) => {
+        // *** this is a demo on the project dependency, see the config file *** //
+
         let checkIfLoginRequired = await loginPage.getContainerLogin.isVisible()
         if (checkIfLoginRequired) {
             console.log('\n\nsession is expired or storage state file does not exists ')
             await loginPage.logIn(dataObj[0].userid, dataObj[0].password) // login as required 
 
-            // watch for error container, if it shows up, trigger registration, the supplies userID and password was from a registered user, re register again
+            // watch for error container, if it shows up, trigger registration, the supplied userID and password was from a registered user, re register again
             let errorContainerVisible = await loginPage.getContainerError.isVisible()
 
             if (errorContainerVisible) {
@@ -18,7 +19,6 @@ test.describe('Parabank - Login Scenarios @smoke', async () => {
             } else {
                 await loginPage.page.context().storageState({ path: './tests/auth/parabank.json' })
             }
-
         } else {
             console.log('session is valid')
         }

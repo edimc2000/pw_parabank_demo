@@ -6,8 +6,11 @@ class BasePage {
 
     constructor(page: Page) {
         this.page = page
-
         this.getContainerLeftPanel = page.locator('#leftPanel')
+    }
+
+    async wait(timeInSecond: number) {
+        await this.page.waitForTimeout(timeInSecond * 1000);
     }
 }
 
