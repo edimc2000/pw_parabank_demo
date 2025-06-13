@@ -9,4 +9,5 @@ node_modules/
 junitReports/reports.xml
 tests/parabank/UNISYS.spec.ts
 tests/auth/*
-tests/parabank/UNISY*
+*UNISY*
+tests/specs/parabank/UNISYS.spec.xxts
