@@ -3,11 +3,8 @@ import { expect, data, test, path } from '../fixtures/pages.fixture'
 test.describe('Parabank - Login Scenarios', async () => {
   test('[TC001] Main page snapshot after logging in', async ({ basePage }, testInfo) => {
 
-    
-    
     await expect(basePage.getContainerLeftPanel).toBeAttached()
     let urlx = basePage.page.url()
-    // await basePage.page.waitForTimeout(10000)
 
     console.log(urlx)
 
@@ -170,8 +167,6 @@ test.describe('Parabank - Login Scenarios', async () => {
         height:480
       }
     });
-
-    // await basePage.page.waitForTimeout(2000)
   })
 
 
