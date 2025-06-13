@@ -7,7 +7,5 @@ node_modules/
 /playwright/.cache/
 .env
 junitReports/reports.xml
-tests/parabank/UNISYS.spec.ts
-tests/auth/*
-*UNISY*
-tests/specs/parabank/UNISYS.spec.xxts
+
+tests/specs/parabank/UNISYS.*
