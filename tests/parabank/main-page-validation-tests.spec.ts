@@ -1,10 +1,18 @@
-import { expect, data, test, dataObj, path } from '../fixtures/pages.fixture'
+import { expect, data, test, path } from '../fixtures/pages.fixture'
 
 test.describe('Parabank - Login Scenarios', async () => {
-    test('[TC001] Main page snapshot after logging in', async ({ loginPage }, testInfo) => {
-        await expect(loginPage.getContainerLeftPanel).toBeAttached()
-        // golden snapshot taken 0608
-        await expect(loginPage.page.locator('body')).toMatchAriaSnapshot(`
+  test('[TC001] Main page snapshot after logging in', async ({ basePage }, testInfo) => {
+
+    
+    
+    await expect(basePage.getContainerLeftPanel).toBeAttached()
+    let urlx = basePage.page.url()
+    // await basePage.page.waitForTimeout(10000)
+
+    console.log(urlx)
+
+    // golden snapshot taken 0608
+    await expect(basePage.page.locator('body')).toMatchAriaSnapshot(`
     - link:
       - /url: admin.htm
       - img
@@ -148,11 +156,23 @@ test.describe('Parabank - Login Scenarios', async () => {
         - link "www.parasoft.com":
           - /url: http://www.parasoft.com/
     `);
-        await loginPage.page.screenshot({
-            path: path.join(__dirname, `screenshots/${testInfo.title}.png`),
-            fullPage: true
-        });
-    })
+    await expect(basePage.page).toHaveScreenshot({
+      fullPage: true
+    });
+
+
+        await expect(basePage.page).toHaveScreenshot({
+      fullPage: true, 
+      clip:{
+        x:270, 
+        y:65, 
+        width:185, 
+        height:480
+      }
+    });
+
+    // await basePage.page.waitForTimeout(2000)
+  })
 
 
 })

@@ -28,6 +28,7 @@ type FixtureForPages = {
     basePage: BasePage
     registerPage: RegisterPage
     loginPage: LoginPage
+    dataObj: sampleData[]
 }
 
 // sample test data 
@@ -37,7 +38,7 @@ const registerDataSample: sampleData[] = parse(fs.readFileSync(csvFile), {
     skip_empty_lines: true
 });
 const data = Object.values(registerDataSample[0])
-const dataObj = registerDataSample[0]
+const dataObj0 = registerDataSample[0]
 
 
 
@@ -51,15 +52,24 @@ const test = base.extend<FixtureForPages>({
 
     registerPage: async ({ basePage }, use) => {
         const registerPage = new RegisterPage(basePage.page)
-        await basePage.page.goto(`${process.env.BASE_URL}register.htm`)
+        // await basePage.page.goto(`${process.env.BASE_URL}register.htm`)
         await use(registerPage)
     },
 
-    loginPage: async ({ basePage }, use) => {
-        const loginPage = new LoginPage(basePage.page)
+    loginPage: async ({ page }, use) => {
+        const loginPage = new LoginPage(page)
+        await page.goto(`${process.env.BASE_URL}`)
         await use(loginPage)
+    },
+
+    dataObj: async ({ }, use) => {
+        const dataObj: sampleData[] = registerDataSample
+
+
+        await use(dataObj)
     }
+
 
 })
 
-export { test, expect, data, dataObj, fs, path }
+export { test, expect, data, fs, path }

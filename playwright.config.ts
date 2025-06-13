@@ -34,7 +34,7 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on',
     headless: false, 
     launchOptions: {
       // This line sets the position of the browser window to the top-left corner of the screen (coordinates 0,0).
@@ -48,35 +48,41 @@ export default defineConfig({
     {
       name: 'parabank-signin',
       testDir: './tests/parabank-signin',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'], 
+        //  storageState: './tests/auth/parabank.json'
+        
+       },
+      
     },
 
     {
       name: 'parabank',
       testDir: './tests/parabank/',
-      // dependencies: ['parabank-signin'],
+      dependencies: ['parabank-signin'],
       use: {
         ...devices['Desktop Chrome'],
         storageState: './tests/auth/parabank.json'
+        
       },
     },
 
 
 
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
