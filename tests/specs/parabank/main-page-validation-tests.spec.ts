@@ -403,6 +403,7 @@ test.describe('Parabank - Main Page', async () => {
             - button "Apply Now"
     `)
     await mainPage.wait(0.5)
+    
   })
 
 })
