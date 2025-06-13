@@ -1,5 +1,6 @@
 
 # Playwright
+
 node_modules/
 /test-results/
 /playwright-report/
@@ -8,4 +9,3 @@ node_modules/
 .env
 junitReports/reports.xml
 
-tests/specs/parabank/UNISYS.*
