@@ -35,10 +35,10 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
-    headless: false, 
+    headless: process.env.CI ? true : false,
     launchOptions: {
       // This line sets the position of the browser window to the top-left corner of the screen (coordinates 0,0).
-    args: ["--window-position=-1400,0"],
+      args: ["--window-position=-1400,0"],
     },
   },
 
@@ -48,12 +48,12 @@ export default defineConfig({
     {
       name: 'parabank-signin',
       testDir: './tests/specs/parabank-signin',
-      use: { 
-        ...devices['Desktop Chrome'], 
-          storageState: './tests/auth/parabank.json'
-        
-       },
-      
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: './tests/auth/parabank.json'
+
+      },
+
     },
 
     {
@@ -63,7 +63,7 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         storageState: './tests/auth/parabank.json'
-        
+
       },
     },
 

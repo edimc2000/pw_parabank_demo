@@ -2,7 +2,9 @@
   "name": "playright-parabank-demo",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "specs": "npx playwright test parabank"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

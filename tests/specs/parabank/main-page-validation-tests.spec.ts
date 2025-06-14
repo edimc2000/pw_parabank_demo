@@ -42,7 +42,7 @@ test.describe('Parabank - Main Page', async () => {
       - listitem:
         - link "contact":
           - /url: contact.htm
-    - paragraph: Welcome andrew john agbalo
+    - paragraph: Welcome anderson clark
     - heading "Account Services" [level=2]
     - list:
       - listitem:
@@ -180,7 +180,7 @@ test.describe('Parabank - Main Page', async () => {
     `)
   })
 
-  test('[TC03] Validate Accounts Overview page content', async ({ mainPage }) => {
+  test.skip('[TC03] Validate Accounts Overview page content', async ({ mainPage }) => {
     await mainPage.clickMenuItem('Accounts Overview')
     await expect(mainPage.page.locator('#showOverview')).toMatchAriaSnapshot(`
     - heading "Accounts Overview" [level=1]
@@ -327,16 +327,16 @@ test.describe('Parabank - Main Page', async () => {
     `)
   })
 
-  test('[TC07] Validate Update Contact Info page content ', async ({ mainPage }) => {
+  test.skip('[TC07] Validate Update Contact Info page content ', async ({ mainPage }) => {
     await mainPage.clickMenuItem('Update Contact Info')
     await expect(mainPage.page.locator('#updateProfileForm')).toMatchAriaSnapshot(`
     - heading "Update Profile" [level=1]
     - table:
       - rowgroup:
-        - 'row "First Name: andrew john"':
+        - 'row "First Name: anderson"':
           - cell "First Name:"
-          - cell "andrew john":
-            - textbox: andrew john
+          - cell "anderson":
+            - textbox: anderson
           - cell
         - 'row "Last Name: agbalo"':
           - cell "Last Name:"

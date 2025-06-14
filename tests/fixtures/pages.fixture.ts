@@ -42,8 +42,6 @@ const registerDataSample: sampleData[] = parse(fs.readFileSync(csvFile), {
 const data = Object.values(registerDataSample[0])
 const dataObj0 = registerDataSample[0]
 
-
-
 // actual fixture to use for test 
 const test = base.extend<FixtureForPages>({
     basePage: async ({ page }, use) => {
