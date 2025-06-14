@@ -326,6 +326,7 @@ test.describe('Parabank - Main Page', async () => {
     - button "Find Transactions"
     `)
   })
+  
 
   test.skip('[TC07] Validate Update Contact Info page content ', async ({ mainPage }) => {
     await mainPage.clickMenuItem('Update Contact Info')
